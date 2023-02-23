@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>pasta</title>
+   
+   
+
+</head>
+<body>
+<header>
+   <menu>
+      <li><a name='index' href="">Main</a></li>
+      <li><a href="calc/">Сalculator</a></li>
+   </menu>
+</header>
+<main>
+   <div><h2>{{ com }}</h2></div>
+   <div>{% for r in lists %}</div>
+   <ul>
+      <li>{{r}}</li>
+   </ul>
+    {% endfor %}
+</main>
+<section class="recipe">
+   <div class="recipe__title">
+      <h2>Калькулятор</h2>
+   </div>
+   <div class="recipe__form">
+      <form action="../calc/result/" method="post">
+         {% csrf_token %}
+         {{form}}
+         <div class="recipe__form_insert">
+            <label for="person">Колическтво персон: </label>
+            <input id="person" type="text" name="pasta" value="{{pasta}}">
+         </div>
+         <div class="recipe__form_action">
+            <input type="submit" value="Ok">
+         </div>
+      </form>
+   </div>
+</section>
+
+
+
+</body>
+</html>
